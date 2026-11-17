@@ -26,11 +26,25 @@
 ---
 
 > [!WARNING]
-> **Play offline.** Easy Anti-Cheat must be disabled. Use only the dedicated
-> `elden_trials` save and never open modded saves or characters in online mode.
+> **Play offline.** Easy Anti-Cheat must be disabled. Elden Trials always runs
+> with its own dedicated save and never uses your Elden Ring save.
 >
 > **This is a beta.** Expect rough edges, balance changes and progress resets
-> between builds. Do not use your main characters.
+> between builds.
+
+## Your save is never touched
+
+Elden Trials does **not** read, modify, replace or upload your Elden Ring save
+under any circumstance.
+
+- `EldenTrials.exe` launches Elden Ring through Mod Engine 3 in **offline mode**
+  with the mod package and its own dedicated `elden_trials` save.
+- The launcher only installs that dedicated save into the selected Steam profile
+  folder. It never opens, edits or overwrites your existing characters or
+  `ER0000.sl2`.
+- Your main characters are never loaded by the mod. The game always starts with
+  the dedicated `elden_trials` character.
+- The mod cannot load another save or switch to one of your characters.
 
 ## About
 
@@ -73,7 +87,7 @@ supported.
 3. Run `EldenTrials.exe`.
 4. The first launch opens the setup screen:
    - it checks the game build;
-   - it asks which Steam profile owns the dedicated save;
+   - it selects which Steam profile folder will host the dedicated save;
    - it asks for the player name shown on the leaderboard.
 5. Press **Play**. The launcher starts Elden Ring through Mod Engine 3 in
    offline mode with the mod package and the dedicated save.
@@ -89,9 +103,11 @@ repository.
 
 ## First launch and account
 
-The setup screen detects your Steam account from the local Elden Ring save
-folders. If that Steam account already has a player, your progress is restored
-automatically. If not, choose a free name and the account is created.
+The setup screen detects your Steam account from the local Elden Ring folder
+structure. It only uses that folder to place the dedicated save; it never reads
+your existing characters. If that Steam account already has a player, your
+Elden Trials progress is restored automatically. If not, choose a free name and
+the account is created.
 
 - Your account, token and settings are stored in `%APPDATA%\EldenTrials`.
 - If you create a new account, **save the recovery code shown once**. It is the
@@ -156,12 +172,17 @@ happened, and a screenshot if possible. You can open an issue or email
 
 ## FAQ
 
-**Does it modify my main save?**  
-No. Elden Trials uses a dedicated `elden_trials` save. Your main characters are
-not touched.
+**Does it modify or use my main save?**  
+No. Elden Trials never reads, modifies or replaces your Elden Ring save. The
+launcher starts the game offline with a dedicated `elden_trials` save; your
+existing characters are never loaded.
+
+**Can I play with my main character?**  
+No. The mod always launches with the dedicated `elden_trials` character and
+cannot load another save.
 
 **Can I play online?**  
-No. Play offline with Easy Anti-Cheat disabled. Using modded saves online can
+No. Play offline with Easy Anti-Cheat disabled. Playing the mod online can
 result in a ban.
 
 **Do I need the DLC?**  
