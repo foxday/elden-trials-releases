@@ -65,9 +65,22 @@ Shadow of the Erdtree expansion.
   it contains the expansion).
 - **Regulation 1.17.1** and a game executable that matches the supported build.
 - **Windows 10 or 11** (64-bit).
-- A local **Elden Ring installation**. The launcher only needs `eldenring.exe`;
-  a separate Steam installation is not required.
+- A local **Elden Ring installation**.
 - Enough free space for the mod package and the dedicated save.
+
+### Steam detection
+
+The launcher detects whether Steam is installed:
+
+- **Steam detected:** the launcher reads your Steam library and automatically
+  fills the game path and the save folder. In this mode **Steam must be running**
+  when you start the mod.
+- **Steam not detected:** the launcher asks for the `eldenring.exe` path and the
+  folder where the dedicated save should be installed. Steam is not required in
+  this mode.
+
+In both modes the mod uses the same dedicated `elden_trials` save and never
+reads or modifies your existing Elden Ring save.
 
 Mod Engine 3 is bundled with the release. You do **not** need to install .NET,
 Visual C++ runtimes or Mod Engine separately.
@@ -88,11 +101,15 @@ supported.
 3. Run `EldenTrials.exe`.
 4. The first launch opens the setup screen:
    - it checks the game build;
-   - it asks for `eldenring.exe` and the folder where the dedicated save will be
-     installed;
-   - it asks for the player name shown on the leaderboard.
+   - if Steam is detected, it auto-completes the game path and save folder;
+   - if Steam is not detected, it asks for `eldenring.exe` and the folder where
+     the dedicated save will be installed;
+   - it asks for your player name if the account is new.
 5. Press **Play**. The launcher starts Elden Ring through Mod Engine 3 in
    offline mode with the mod package and the dedicated save.
+
+If Steam was detected, keep Steam running while you play. Without Steam, the
+manual paths you selected are used instead.
 
 Always start the game through `EldenTrials.exe`. Launching Elden Ring directly
 will not load the mod.
@@ -105,11 +122,22 @@ repository.
 
 ## First launch and account
 
-The setup screen lets you point the launcher at `eldenring.exe` and choose the
-folder where the dedicated save will be installed. Steam is not required. The
-launcher never reads your existing characters; it only places the dedicated
-save. If that account already has a player, your Elden Trials progress is
-restored automatically. If not, choose a free name and the account is created.
+The setup screen has two possible flows:
+
+**Steam detected**
+- The launcher reads your Steam library and fills the game path and save folder
+  automatically.
+- Steam must be installed and running when you press **Play**.
+- If your Steam account already has an Elden Trials player, your progress is
+  restored. Otherwise choose a free player name.
+
+**Steam not detected**
+- Select `eldenring.exe` manually.
+- Select the folder where the dedicated save will be installed.
+- Choose a player name to create the account.
+
+In both cases the launcher never reads your existing characters; it only places
+the dedicated save.
 
 - Your account, token and settings are stored in `%APPDATA%\EldenTrials`.
 - If you create a new account, **save the recovery code shown once**. It is the
@@ -147,6 +175,8 @@ while preserving `config` and `dist`.
 
 | Problem | What to try |
 | --- | --- |
+| Steam is not detected | Select `eldenring.exe` and the save folder manually in the setup screen. |
+| The game does not start with Steam installed | Start Steam, keep it running and launch `EldenTrials.exe` again. |
 | Windows blocks the launcher | SmartScreen → **More info** → **Run anyway**. Verify the ZIP came from this repository. |
 | The game starts without the mod | Start it with `EldenTrials.exe`, not directly. |
 | Unsupported game build | The mod uses fixed executable offsets. Use the supported regulation/build (1.17.1). |
@@ -192,6 +222,12 @@ Yes. Shadow of the Erdtree is required.
 
 **Do I need Mod Engine 3?**  
 It is bundled with the release. You do not need a separate installation.
+
+**Do I need Steam?**  
+It depends on your setup. If Steam is installed, the launcher auto-detects the
+game and save paths, and Steam must be running when you play. If Steam is not
+detected, you can point the launcher to `eldenring.exe` and the save folder
+manually and play without it.
 
 **Is my progress stored online?**  
 Your times and account live online. The mod folder only contains the game
