@@ -148,10 +148,13 @@ the dedicated save.
 
 1. Start Elden Trials with `EldenTrials.exe`.
 2. Complete the setup screen and press **Play**.
-3. Load the **`elden_trials`** character at Roundtable Hold.
-4. Open the challenge selector.
-5. Choose a trial, review the fixed build and press **START**.
-6. Defeat the boss. Your time is submitted automatically and your personal
+3. In Elden Ring, choose **Continue** or **Load Game**.
+4. Load the **`elden_trials`** character.
+5. Go to the **Roundtable Hold** and sit at the grace.
+6. In the grace menu, select **Elden Trials**.
+7. Choose the mode (**Normal** or **No Hit**), then select a challenge.
+8. Review the fixed build on the card and press **START**.
+9. Defeat the boss. Your time is submitted automatically and your personal
    best, the world record and your world position are updated.
 
 Press the website shortcut shown in the selector, or `Y` on a gamepad, to open
