@@ -26,8 +26,9 @@
 ---
 
 > [!WARNING]
-> **Play offline.** Easy Anti-Cheat must be disabled. Elden Trials always runs
-> with its own dedicated save and never uses your Elden Ring save.
+> **Online play is not supported.** `EldenTrials.exe` already starts Elden Ring
+> in **offline mode with Easy Anti-Cheat disabled**. You do not need to change
+> any Steam, EAC or game settings yourself.
 >
 > **This is a beta.** Expect rough edges, balance changes and progress resets
 > between builds.
@@ -182,8 +183,8 @@ No. The mod always launches with the dedicated `elden_trials` character and
 cannot load another save.
 
 **Can I play online?**  
-No. Play offline with Easy Anti-Cheat disabled. Playing the mod online can
-result in a ban.
+No. `EldenTrials.exe` always launches the game in offline mode and handles
+Easy Anti-Cheat automatically. You do not need to disable anything manually.
 
 **Do I need the DLC?**  
 Yes. Shadow of the Erdtree is required.
