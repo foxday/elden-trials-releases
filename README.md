@@ -28,7 +28,7 @@
 > [!WARNING]
 > **Online play is not supported.** `EldenTrials.exe` already starts Elden Ring
 > in **offline mode with Easy Anti-Cheat disabled**. You do not need to change
-> any Steam, EAC or game settings yourself.
+> any game, EAC or launcher settings yourself.
 >
 > **This is a beta.** Expect rough edges, balance changes and progress resets
 > between builds.
@@ -40,9 +40,8 @@ under any circumstance.
 
 - `EldenTrials.exe` launches Elden Ring through Mod Engine 3 in **offline mode**
   with the mod package and its own dedicated `elden_trials` save.
-- The launcher only installs that dedicated save into the selected Steam profile
-  folder. It never opens, edits or overwrites your existing characters or
-  `ER0000.sl2`.
+- The launcher only installs that dedicated save into the selected save folder.
+  It never opens, edits or overwrites your existing characters or `ER0000.sl2`.
 - Your main characters are never loaded by the mod. The game always starts with
   the dedicated `elden_trials` character.
 - The mod cannot load another save or switch to one of your characters.
@@ -66,7 +65,8 @@ Shadow of the Erdtree expansion.
   it contains the expansion).
 - **Regulation 1.17.1** and a game executable that matches the supported build.
 - **Windows 10 or 11** (64-bit).
-- A **Steam** account that has launched Elden Ring at least once.
+- A local **Elden Ring installation**. The launcher only needs `eldenring.exe`;
+  a separate Steam installation is not required.
 - Enough free space for the mod package and the dedicated save.
 
 Mod Engine 3 is bundled with the release. You do **not** need to install .NET,
@@ -88,13 +88,14 @@ supported.
 3. Run `EldenTrials.exe`.
 4. The first launch opens the setup screen:
    - it checks the game build;
-   - it selects which Steam profile folder will host the dedicated save;
+   - it asks for `eldenring.exe` and the folder where the dedicated save will be
+     installed;
    - it asks for the player name shown on the leaderboard.
 5. Press **Play**. The launcher starts Elden Ring through Mod Engine 3 in
    offline mode with the mod package and the dedicated save.
 
 Always start the game through `EldenTrials.exe`. Launching Elden Ring directly
-from Steam will not load the mod.
+will not load the mod.
 
 ### Windows SmartScreen
 
@@ -104,11 +105,11 @@ repository.
 
 ## First launch and account
 
-The setup screen detects your Steam account from the local Elden Ring folder
-structure. It only uses that folder to place the dedicated save; it never reads
-your existing characters. If that Steam account already has a player, your
-Elden Trials progress is restored automatically. If not, choose a free name and
-the account is created.
+The setup screen lets you point the launcher at `eldenring.exe` and choose the
+folder where the dedicated save will be installed. Steam is not required. The
+launcher never reads your existing characters; it only places the dedicated
+save. If that account already has a player, your Elden Trials progress is
+restored automatically. If not, choose a free name and the account is created.
 
 - Your account, token and settings are stored in `%APPDATA%\EldenTrials`.
 - If you create a new account, **save the recovery code shown once**. It is the
@@ -147,9 +148,9 @@ while preserving `config` and `dist`.
 | Problem | What to try |
 | --- | --- |
 | Windows blocks the launcher | SmartScreen → **More info** → **Run anyway**. Verify the ZIP came from this repository. |
-| The game starts without the mod | Start it with `EldenTrials.exe`, not from Steam. |
+| The game starts without the mod | Start it with `EldenTrials.exe`, not directly. |
 | Unsupported game build | The mod uses fixed executable offsets. Use the supported regulation/build (1.17.1). |
-| The `elden_trials` character is missing | Check that the correct Steam profile was selected in the setup screen. |
+| The `elden_trials` character is missing | Check that the correct save folder was selected in the setup screen. |
 | Antivirus quarantines files | Restore the files and add the Elden Trials folder as an exception. |
 | The overlay or selector does not appear | Close the game and check the logs below. |
 | Account lost | Use the recovery code. Without it, the account cannot be restored. |
